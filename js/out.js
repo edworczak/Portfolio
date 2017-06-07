@@ -9676,6 +9676,10 @@ var _technologies = __webpack_require__(88);
 
 var _technologies2 = _interopRequireDefault(_technologies);
 
+var _contact = __webpack_require__(189);
+
+var _contact2 = _interopRequireDefault(_contact);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9705,7 +9709,8 @@ var App = function (_React$Component) {
         _react2.default.createElement(_header2.default, null),
         _react2.default.createElement(_baner2.default, null),
         _react2.default.createElement(_about2.default, null),
-        _react2.default.createElement(_technologies2.default, null)
+        _react2.default.createElement(_technologies2.default, null),
+        _react2.default.createElement(_contact2.default, null)
       );
     }
   }]);
@@ -22642,6 +22647,211 @@ module.exports = traverseAllChildren;
 __webpack_require__(82);
 module.exports = __webpack_require__(83);
 
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(21);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(17);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Contact = function (_React$Component) {
+  _inherits(Contact, _React$Component);
+
+  function Contact(props) {
+    _classCallCheck(this, Contact);
+
+    var _this = _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this, props));
+
+    _this.state = {
+      name: "",
+      mail: "",
+      topic: "",
+      message: "",
+      info: "Wypełnij pola || Fill in the fields",
+      borderName: "correct",
+      borderMail: "correct",
+      borderTopic: "correct",
+      borderMessage: "correct"
+    };
+    return _this;
+  }
+
+  _createClass(Contact, [{
+    key: 'enterName',
+    value: function enterName(event) {
+      this.setState({
+        name: event.target.value
+      });
+    }
+  }, {
+    key: 'enterMail',
+    value: function enterMail(event) {
+      this.setState({
+        mail: event.target.value
+      });
+    }
+  }, {
+    key: 'enterTopic',
+    value: function enterTopic(event) {
+      this.setState({
+        topic: event.target.value
+      });
+    }
+  }, {
+    key: 'enterMessage',
+    value: function enterMessage(event) {
+      this.setState({
+        message: event.target.value
+      });
+    }
+  }, {
+    key: 'sendMail',
+    value: function sendMail(event) {
+      event.preventDefault();
+      if (this.state.name != "" && this.state.message != "" && this.state.mail.indexOf("@") != -1 && this.state.topic != "") {
+        this.setState({
+          name: "",
+          mail: "",
+          topic: "",
+          message: "",
+          info: "Wiadomość wysłana || Message sent",
+          borderName: "correct",
+          borderMail: "correct",
+          borderTopic: "correct",
+          borderMessage: "correct"
+        }, function () {
+          return console.log("wysyłam");
+        });
+      } else {
+        this.setState({
+          info: "Popraw pola z czerwoną ramką || Correct inputs with red border"
+        });
+
+        if (this.state.name == "") {
+          this.setState({
+            borderName: "incorrect"
+          });
+        } else {
+          this.setState({
+            borderName: "correct"
+          });
+        }
+
+        if (this.state.mail.indexOf("@") == -1) {
+          this.setState({
+            borderMail: "incorrect"
+          });
+        } else {
+          this.setState({
+            borderMail: "correct"
+          });
+        }
+
+        if (this.state.topic == "") {
+          this.setState({
+            borderTopic: "incorrect"
+          });
+        } else {
+          this.setState({
+            borderTopic: "correct"
+          });
+        }
+
+        if (this.state.message == "") {
+          this.setState({
+            borderMessage: "incorrect"
+          });
+        } else {
+          this.setState({
+            borderMessage: "correct"
+          });
+        }
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Kontakt || Contact'
+        ),
+        _react2.default.createElement(
+          'p',
+          { className: 'info' },
+          this.state.info
+        ),
+        _react2.default.createElement(
+          'form',
+          { className: 'contact' },
+          _react2.default.createElement(
+            'div',
+            { className: 'contact__inputs' },
+            _react2.default.createElement(
+              'div',
+              { className: 'contact__column' },
+              _react2.default.createElement('input', { type: 'text', className: this.state.borderName, placeholder: 'twoje imi\u0119 || your name', value: this.state.name, onChange: function onChange(event) {
+                  return _this2.enterName(event);
+                } }),
+              _react2.default.createElement('input', { type: 'email', className: this.state.borderMail, placeholder: 'tw\xF3j mail || your mail', value: this.state.mail, onChange: function onChange(event) {
+                  return _this2.enterMail(event);
+                } }),
+              _react2.default.createElement('input', { type: 'text', className: this.state.borderTopic, placeholder: 'temat || topic', value: this.state.topic, onChange: function onChange(event) {
+                  return _this2.enterTopic(event);
+                } })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'contact__column' },
+              _react2.default.createElement('textarea', { className: this.state.borderMessage, placeholder: 'wiadomo\u015B\u0107 || message', value: this.state.message, onChange: function onChange(event) {
+                  return _this2.enterMessage(event);
+                } })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'contact__submit' },
+            _react2.default.createElement('input', { type: 'submit', value: 'wy\u015Blij || send', onClick: function onClick(event) {
+                return _this2.sendMail(event);
+              } })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Contact;
+}(_react2.default.Component);
+
+exports.default = Contact;
 
 /***/ })
 /******/ ]);

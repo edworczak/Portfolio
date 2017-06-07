@@ -1,0 +1,30 @@
+header {
+  & {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid $color-background-light;
+    color: $color-font-on-dark;
+    display: flex;
+    font-size: 1.8rem;
+    height: 5rem;
+    justify-content: space-between;
+    padding: 0 10%;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .logo {
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  a {
+    color: $color-font-on-dark;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+}

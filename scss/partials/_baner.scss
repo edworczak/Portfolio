@@ -1,0 +1,40 @@
+.baner {
+  & {
+    align-items: center;
+    background-color: #000000;
+    background-image: url("http://www.ewa.arkomp.pl/portfolio/baner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  * {
+    margin-bottom: 2rem;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  .baner__title {
+    & {
+      font-size: 7rem;
+    }
+
+    strong {
+      font-weight: 900;
+    }
+  }
+
+  .short-line {
+    border-bottom: 1px solid #ffffff;
+    width: 5rem;
+  }
+}

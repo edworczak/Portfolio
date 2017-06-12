@@ -9717,10 +9717,26 @@ var App = function (_React$Component) {
         'div',
         { className: 'container' },
         _react2.default.createElement(_header2.default, null),
-        _react2.default.createElement(_baner2.default, null),
-        _react2.default.createElement(_about2.default, null),
-        _react2.default.createElement(_technologies2.default, null),
-        _react2.default.createElement(_contact2.default, null)
+        _react2.default.createElement(
+          'div',
+          { className: 'row baner__image' },
+          _react2.default.createElement(_baner2.default, null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(_about2.default, null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(_technologies2.default, null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(_contact2.default, null)
+        )
       );
     }
   }]);

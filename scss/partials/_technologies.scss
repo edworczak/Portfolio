@@ -2,7 +2,7 @@
   & {
     background-color: $color-background-darker;
   }
-  
+
   .technologies__row {
     align-items: center;
     display: flex;
@@ -22,6 +22,10 @@
       position: relative;
       width: 15vw;
       z-index: 1;
+      @media (min-width: 1500px) {
+        height: 23rem;
+        width: 23rem;
+      }
     }
 
     & > * {
@@ -31,6 +35,10 @@
       border: 1px solid $color-border;
       height: 15vw;
       width: 15vw;
+      @media (min-width: 1500px) {
+        height: 23rem;
+        width: 23rem;
+      }
     }
 
     h4 {

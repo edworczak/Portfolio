@@ -1,11 +1,13 @@
+.baner__image {
+  background-image: url("http://www.ewa.arkomp.pl/portfolio/baner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .baner {
   & {
     align-items: center;
-    background-color: #000000;
-    background-image: url("http://www.ewa.arkomp.pl/portfolio/baner.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     color: #ffffff;
     display: flex;
     flex-direction: column;

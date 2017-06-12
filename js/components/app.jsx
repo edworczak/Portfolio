@@ -12,10 +12,10 @@ export default class App extends React.Component {
     render() {
     return <div className="container">
       <Header />
-      <Baner />
-      <About />
-      <Technologies />
-      <Contact />
+      <div className="row baner__image"><Baner /></div>
+      <div className="row"><About /></div>
+      <div className="row"><Technologies /></div>
+      <div className="row"><Contact /></div>
     </div>;
   }
 }

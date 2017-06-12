@@ -21,10 +21,7 @@
   }
 
   [class^="about__"] {
-    display: flex;
-    flex-direction: column;
     font-size: 1.2rem;
-    justify-content: space-between;
     width: 45%;
     @media (max-width: 1000px) {
       width: 100%;

@@ -25,10 +25,20 @@ h3 {
 }
 
 .container {
-  & > div {
-    padding: 5rem 10%;
-    @media (min-width: 1200px) {
-      padding: 5rem auto;
+  .row {
+    width: 100%;
+  }
+
+  .row > div {
+    margin: 0 auto;
+    padding: 5rem 0;
+    width: 80%;
+    @media (min-width: 1500px) {
+      width: 120rem;
     }
+  }
+
+  .row:nth-of-type(2n+1) {
+    background-color: $color-background-darker;
   }
 }

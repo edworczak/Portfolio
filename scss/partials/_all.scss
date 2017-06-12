@@ -27,5 +27,8 @@ h3 {
 .container {
   & > div {
     padding: 5rem 10%;
+    @media (min-width: 1200px) {
+      padding: 5rem auto;
+    }
   }
 }

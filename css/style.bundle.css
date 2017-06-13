@@ -80,7 +80,7 @@ h3 {
   background-color: #efefef; }
 
 header {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #003042;
   border-bottom: 1px solid #ffffff;
   color: #ffffff;
   font-size: 1.8rem;
@@ -103,11 +103,24 @@ header .header__content {
 header .logo strong {
   font-weight: 600; }
 
+header .social {
+  align-items: center;
+  display: flex;
+  font-size: 1.2rem; }
+
 header a {
-  color: #ffffff; }
+  color: #ffffff;
+  margin-left: 1rem; }
 
 header a:hover {
   opacity: 0.8; }
+
+header .fa-stack-1x {
+  color: #000000;
+  font-size: 1.5rem; }
+
+header .fa-github {
+  font-size: 3.2rem; }
 
 .baner__image {
   background-position: center;
@@ -241,7 +254,7 @@ header a:hover {
   justify-content: center;
   left: 0;
   opacity: 0;
-  padding: 1rem;
+  padding: 2rem;
   position: absolute;
   right: 0;
   text-align: center;
@@ -320,7 +333,7 @@ header a:hover {
   border-radius: 2.5rem;
   color: #ffffff;
   display: flex;
-  font-size: 2.6rem;
+  font-size: 3.6rem;
   height: 5rem;
   justify-content: center;
   margin-right: 2rem;

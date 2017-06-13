@@ -1,6 +1,6 @@
 header {
   & {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: $color-rainbow-navy;
     border-bottom: 1px solid $color-background-light;
     color: $color-font-on-dark;
     font-size: 1.8rem;
@@ -28,11 +28,27 @@ header {
     }
   }
 
+  .social {
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+  }
+
   a {
     color: $color-font-on-dark;
+    margin-left: 1rem;
   }
 
   a:hover {
     opacity: 0.8;
+  }
+
+  .fa-stack-1x {
+    color: $color-font;
+    font-size: 1.5rem;
+  }
+
+  .fa-github {
+    font-size: 3.2rem;
   }
 }

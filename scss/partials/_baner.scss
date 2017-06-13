@@ -26,9 +26,9 @@
 
   .baner__title {
     & {
-      font-size: 7rem;
+      font-size: 7vh;
       @media (max-width: $width-mobile) {
-        font-size: 4rem;
+        padding-top: 10vh;
       }
     }
 

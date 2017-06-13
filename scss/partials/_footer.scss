@@ -1,0 +1,18 @@
+footer {
+  & {
+    background-color: $color-rainbow-navy;
+    color: $color-font-on-dark;
+  }
+  & > div {
+    align-items: center;
+    display: flex;
+    font-size: 5rem;
+    font-weight: $font-bold;
+    justify-content: center;
+    padding: 2em 0;
+    width: 100%;
+    @media (max-width: $width-mobile) {
+      font-size: 3vh;
+    }
+  }
+}

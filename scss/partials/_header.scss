@@ -3,28 +3,28 @@ header {
     background-color: $color-rainbow-navy;
     border-bottom: 1px solid $color-background-light;
     color: $color-font-on-dark;
-    font-size: 1.8rem;
+    font-size: 2vh;
     position: fixed;
     width: 100%;
     z-index: 2;
+    @media (max-width: $width-mobile) {
+      font-size: 3vh;
+    }
   }
 
   .header__content {
     align-items: center;
     display: flex;
-    height: 5rem;
+    height: 6vh;
     justify-content: space-between;
-    margin: 0 auto;
-    width: 80%;
-    @media (min-width: $width-max) {
-      margin: 0 auto;
-      width: 120rem;
+    @media (max-width: $width-mobile) {
+      height: 10vh;
     }
   }
 
   .logo {
     strong {
-      font-weight: 600;
+      font-weight: $font-bold;
     }
   }
 
@@ -32,6 +32,9 @@ header {
     align-items: center;
     display: flex;
     font-size: 1.2rem;
+    @media (max-width: $width-mobile) {
+      font-size: 2vh;
+    }
   }
 
   a {
@@ -46,9 +49,15 @@ header {
   .fa-stack-1x {
     color: $color-font;
     font-size: 1.5rem;
+    @media (max-width: $width-mobile) {
+      font-size: 2vh;
+    }
   }
 
   .fa-github {
     font-size: 3.2rem;
+    @media (max-width: $width-mobile) {
+      font-size: 5.3vh;
+    }
   }
 }

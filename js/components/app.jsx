@@ -8,6 +8,7 @@ import About from './about.jsx';
 import Technologies from './technologies.jsx';
 import Portfolio from './portfolio.jsx';
 import Contact from './contact.jsx';
+import Footer from './footer.jsx';
 
 export default class App extends React.Component {
   render() {
@@ -18,6 +19,7 @@ export default class App extends React.Component {
       <div className="row"><Technologies /></div>
       <div className="row"><Portfolio /></div>
       <div className="row"><Contact /></div>
+      <div className="row"><Footer /></div>
     </div>;
   }
 }

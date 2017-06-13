@@ -9921,20 +9921,46 @@ var Contact = function (_React$Component) {
   }, {
     key: 'sendMail',
     value: function sendMail(event) {
+      var _this2 = this;
+
       event.preventDefault();
+
+      var message = {
+        name: this.state.name,
+        mail: this.state.mail,
+        topic: this.state.topic,
+        message: this.state.message
+      };
       if (this.state.name != "" && this.state.message != "" && this.state.mail.indexOf("@") != -1 && this.state.topic != "") {
-        this.setState({
-          name: "",
-          mail: "",
-          topic: "",
-          message: "",
-          info: "Wiadomość wysłana || Message sent",
-          borderName: "correct",
-          borderMail: "correct",
-          borderTopic: "correct",
-          borderMessage: "correct"
-        }, function () {
-          return console.log("wysyłam");
+        $.ajax({
+          url: 'https://formspree.io/edworczak@gmail.com',
+          method: 'POST',
+          contentType: "application/json; charset=utf-8",
+          data: JSON.stringify(message),
+          dataType: 'json',
+          beforeSend: function beforeSend() {
+            _this2.setState({
+              info: "Wysyłanie... || Sending..."
+            });
+          },
+          success: function success(data) {
+            _this2.setState({
+              name: "",
+              mail: "",
+              topic: "",
+              message: "",
+              info: "Wiadomość wysłana || Message sent",
+              borderName: "correct",
+              borderMail: "correct",
+              borderTopic: "correct",
+              borderMessage: "correct"
+            });
+          },
+          error: function error(err) {
+            _this2.setState({
+              info: "Błąd wysyłania || Sending error"
+            });
+          }
         });
       } else {
         this.setState({
@@ -9985,7 +10011,7 @@ var Contact = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return _react2.default.createElement(
         'div',
@@ -10002,28 +10028,28 @@ var Contact = function (_React$Component) {
         ),
         _react2.default.createElement(
           'form',
-          { className: 'contact' },
+          { className: 'contact', action: 'https://formspree.io/edworczak@gmail.com', method: 'POST' },
           _react2.default.createElement(
             'div',
             { className: 'contact__inputs' },
             _react2.default.createElement(
               'div',
               { className: 'contact__column' },
-              _react2.default.createElement('input', { type: 'text', className: this.state.borderName, placeholder: 'imi\u0119 || name', value: this.state.name, onChange: function onChange(event) {
-                  return _this2.enterName(event);
+              _react2.default.createElement('input', { type: 'text', name: 'Name', className: this.state.borderName, placeholder: 'imi\u0119 || name', value: this.state.name, onChange: function onChange(event) {
+                  return _this3.enterName(event);
                 } }),
-              _react2.default.createElement('input', { type: 'email', className: this.state.borderMail, placeholder: 'mail', value: this.state.mail, onChange: function onChange(event) {
-                  return _this2.enterMail(event);
+              _react2.default.createElement('input', { type: 'email', name: 'Mail', className: this.state.borderMail, placeholder: 'mail', value: this.state.mail, onChange: function onChange(event) {
+                  return _this3.enterMail(event);
                 } }),
-              _react2.default.createElement('input', { type: 'text', className: this.state.borderTopic, placeholder: 'temat || topic', value: this.state.topic, onChange: function onChange(event) {
-                  return _this2.enterTopic(event);
+              _react2.default.createElement('input', { type: 'text', name: 'Topic', className: this.state.borderTopic, placeholder: 'temat || topic', value: this.state.topic, onChange: function onChange(event) {
+                  return _this3.enterTopic(event);
                 } })
             ),
             _react2.default.createElement(
               'div',
               { className: 'contact__column' },
-              _react2.default.createElement('textarea', { className: this.state.borderMessage, placeholder: 'wiadomo\u015B\u0107 || message', value: this.state.message, onChange: function onChange(event) {
-                  return _this2.enterMessage(event);
+              _react2.default.createElement('textarea', { name: 'Message', className: this.state.borderMessage, placeholder: 'wiadomo\u015B\u0107 || message', value: this.state.message, onChange: function onChange(event) {
+                  return _this3.enterMessage(event);
                 } })
             )
           ),
@@ -10031,7 +10057,7 @@ var Contact = function (_React$Component) {
             'div',
             { className: 'contact__submit' },
             _react2.default.createElement('input', { type: 'submit', value: 'wy\u015Blij || send', onClick: function onClick(event) {
-                return _this2.sendMail(event);
+                return _this3.sendMail(event);
               } })
           )
         )

@@ -43,23 +43,49 @@ export default class Contact extends React.Component {
 
   sendMail(event) {
     event.preventDefault();
+
+    let message = {
+      name: this.state.name,
+      mail: this.state.mail,
+      topic: this.state.topic,
+      message: this.state.message
+    }
     if (
       (this.state.name != "") &&
       (this.state.message != "") &&
       (this.state.mail.indexOf("@") != -1) &&
       (this.state.topic != "")
     ) {
-      this.setState({
-        name: "",
-        mail: "",
-        topic: "",
-        message: "",
-        info: "Wiadomość wysłana || Message sent",
-        borderName: "correct",
-        borderMail: "correct",
-        borderTopic: "correct",
-        borderMessage: "correct"
-      }, () => console.log("wysyłam"));
+      $.ajax({
+		    url: 'https://formspree.io/edworczak@gmail.com',
+		    method: 'POST',
+        contentType:"application/json; charset=utf-8",
+		    data: JSON.stringify(message),
+		    dataType: 'json',
+		    beforeSend: () => {
+          this.setState({
+            info: "Wysyłanie... || Sending..."
+          })
+		    },
+		    success: (data) => {
+          this.setState({
+            name: "",
+            mail: "",
+            topic: "",
+            message: "",
+            info: "Wiadomość wysłana || Message sent",
+            borderName: "correct",
+            borderMail: "correct",
+            borderTopic: "correct",
+            borderMessage: "correct"
+          });
+		    },
+		    error: (err) => {
+          this.setState({
+            info: "Błąd wysyłania || Sending error"
+          })
+		    }
+	    });
     } else {
       this.setState({
         info: "Popraw pola z czerwoną ramką || Correct inputs with red border"
@@ -111,15 +137,15 @@ export default class Contact extends React.Component {
     return <div className="container">
       <h3>Kontakt || Contact</h3>
         <p className="info">{this.state.info}</p>
-      <form className="contact">
+      <form className="contact" action="https://formspree.io/edworczak@gmail.com" method="POST">
         <div className="contact__inputs">
           <div className="contact__column">
-            <input type="text" className={this.state.borderName} placeholder="imię || name" value={this.state.name} onChange={event => this.enterName(event)} />
-            <input type="email" className={this.state.borderMail} placeholder="mail" value={this.state.mail} onChange={event => this.enterMail(event)} />
-            <input type="text" className={this.state.borderTopic} placeholder="temat || topic" value={this.state.topic} onChange={event => this.enterTopic(event)} />
+            <input type="text" name="Name" className={this.state.borderName} placeholder="imię || name" value={this.state.name} onChange={event => this.enterName(event)} />
+            <input type="email" name="Mail" className={this.state.borderMail} placeholder="mail" value={this.state.mail} onChange={event => this.enterMail(event)} />
+            <input type="text" name="Topic" className={this.state.borderTopic} placeholder="temat || topic" value={this.state.topic} onChange={event => this.enterTopic(event)} />
           </div>
           <div className="contact__column">
-            <textarea className={this.state.borderMessage} placeholder="wiadomość || message" value={this.state.message} onChange={event => this.enterMessage(event)} />
+            <textarea name="Message" className={this.state.borderMessage} placeholder="wiadomość || message" value={this.state.message} onChange={event => this.enterMessage(event)} />
           </div>
         </div>
         <div className="contact__submit">

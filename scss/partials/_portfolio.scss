@@ -1,0 +1,90 @@
+.portfolio {
+  & {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $width-mobile) {
+      flex-direction: column;
+    }
+  }
+
+  .portfolio__project {
+    border: 1px solid $color-border;
+    width: 48%;
+    @media (max-width: $width-mobile) {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .portfolio__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20rem;
+    width: 100%;
+  }
+
+  .portfolio__text {
+    padding: 2rem;
+    @media (max-width: $width-mobile) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  strong {
+    color: $color-rainbow-orange;
+    font-weight: 600;
+  }
+
+  .portfolio__buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    @media (max-width: $width-mobile) {
+      flex-direction: column;
+    }
+  }
+
+  %buttons {
+    align-items: center;
+    border: 0;
+    border-radius: 2.5rem;
+    color: $color-font-on-dark;
+    display: flex;
+    font-size: 2.6rem;
+    height: 5rem;
+    justify-content: center;
+    margin-right: 2rem;
+    text-decoration: none;
+    width: 5rem;
+    @media (max-width: $width-mobile) {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  a, a:visited {
+    @extend %buttons;
+    background-color: $color-button;
+  }
+
+  .button-disabled {
+    @extend %buttons;
+    background-color: $color-border;
+  }
+
+  .portfolio__buttons > *:last-child {
+    margin-right: 0;
+    @media (max-width: $width-mobile) {
+      margin-bottom: 0;
+    }
+  }
+}

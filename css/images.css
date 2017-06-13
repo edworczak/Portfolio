@@ -1,3 +1,7 @@
+.baner__image {
+  background-image: url("../img/baner.png");
+}
+
 .html {
   background-image: url("../img/html5.png");
 }
@@ -56,4 +60,16 @@
 
 .storyline {
   background-image: url("../img/storyline.png");
+}
+
+.bookkeeper {
+  background-color: #003042;
+  background-image: url("../img/bookkeeper.png");
+  background-size: contain;
+}
+
+.my-portfolio {
+  background-color: #003042;
+  background-image: url("../img/my-portfolio.jpg");
+  background-size: cover;
 }

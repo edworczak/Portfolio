@@ -10,7 +10,7 @@ import Portfolio from './portfolio.jsx';
 import Contact from './contact.jsx';
 
 export default class App extends React.Component {
-    render() {
+  render() {
     return <div className="container">
       <Header />
       <div className="row baner__image"><Baner /></div>

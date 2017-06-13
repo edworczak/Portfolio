@@ -10134,7 +10134,7 @@ exports.default = Header;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -10147,6 +10147,10 @@ var _reactDom = __webpack_require__(13);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _portfolioProject = __webpack_require__(191);
+
+var _portfolioProject2 = _interopRequireDefault(_portfolioProject);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10155,23 +10159,61 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// Import components
+
+
 var Portfolio = function (_React$Component) {
-    _inherits(Portfolio, _React$Component);
+  _inherits(Portfolio, _React$Component);
 
-    function Portfolio() {
-        _classCallCheck(this, Portfolio);
+  function Portfolio(props) {
+    _classCallCheck(this, Portfolio);
 
-        return _possibleConstructorReturn(this, (Portfolio.__proto__ || Object.getPrototypeOf(Portfolio)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Portfolio.__proto__ || Object.getPrototypeOf(Portfolio)).call(this, props));
+
+    _this.state = {
+      projects: [{
+        name: "BookKeeper",
+        imageClassName: "bookkeeper",
+        descriptionPL: "Aplikacja dla domowej biblioteczki.",
+        descriptionENG: "Application for home library.",
+        gitLink: "https://github.com/edworczak/BookKeeper",
+        webLink: null
+      }, {
+        name: "Portfolio",
+        imageClassName: "my-portfolio",
+        descriptionPL: "Strona mojego portfolio.",
+        descriptionENG: "My portfolio's website.",
+        gitLink: "https://github.com/edworczak/Portfolio",
+        webLink: null
+      }]
+    };
+    return _this;
+  }
+
+  _createClass(Portfolio, [{
+    key: 'render',
+    value: function render() {
+      var projectsHTML = [];
+
+      for (var i = 0; i < this.state.projects.length; i++) {
+        projectsHTML.push(_react2.default.createElement(_portfolioProject2.default, { key: i, projectId: i,
+          name: this.state.projects[i].name,
+          imageClassName: this.state.projects[i].imageClassName,
+          descriptionPL: this.state.projects[i].descriptionPL,
+          descriptionENG: this.state.projects[i].descriptionENG,
+          gitLink: this.state.projects[i].gitLink,
+          webLink: this.state.projects[i].webLink }));
+      }
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'portfolio' },
+        projectsHTML
+      );
     }
+  }]);
 
-    _createClass(Portfolio, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement('div', { className: 'portfolio' });
-        }
-    }]);
-
-    return Portfolio;
+  return Portfolio;
 }(_react2.default.Component);
 
 exports.default = Portfolio;
@@ -22951,6 +22993,136 @@ module.exports = traverseAllChildren;
 __webpack_require__(82);
 module.exports = __webpack_require__(83);
 
+
+/***/ }),
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(15);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(13);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Project = function (_React$Component) {
+  _inherits(Project, _React$Component);
+
+  function Project(props) {
+    _classCallCheck(this, Project);
+
+    var _this = _possibleConstructorReturn(this, (Project.__proto__ || Object.getPrototypeOf(Project)).call(this, props));
+
+    _this.state = {
+      imageClassName: "portfolio__image " + _this.props.imageClassName
+    };
+    return _this;
+  }
+
+  _createClass(Project, [{
+    key: 'render',
+    value: function render() {
+      var gitLink = [];
+      if (this.props.gitLink != null) {
+        gitLink.push(_react2.default.createElement(
+          'a',
+          { key: "git" + this.props.projectId, title: 'GitHub', href: this.props.gitLink, target: '_blank' },
+          _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true' })
+        ));
+      } else {
+        gitLink.push(_react2.default.createElement(
+          'div',
+          { key: "git" + this.props.projectId, title: 'GitHub', className: 'button-disabled' },
+          _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true' })
+        ));
+      }
+
+      var webLink = [];
+      if (this.props.webLink != null) {
+        webLink.push(_react2.default.createElement(
+          'a',
+          { key: "web" + this.props.projectId, title: 'Strona || Website', href: this.props.webLink, target: '_blank' },
+          _react2.default.createElement('i', { className: 'fa fa-globe', 'aria-hidden': 'true' })
+        ));
+      } else {
+        webLink.push(_react2.default.createElement(
+          'div',
+          { key: "web" + this.props.projectId, title: 'Strona || Website', className: 'button-disabled' },
+          _react2.default.createElement('i', { className: 'fa fa-globe', 'aria-hidden': 'true' })
+        ));
+      }
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'portfolio__project' },
+        _react2.default.createElement('div', { className: this.state.imageClassName }),
+        _react2.default.createElement(
+          'div',
+          { className: 'portfolio__text' },
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'h3',
+              null,
+              this.props.name
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'strong',
+                null,
+                'PL:'
+              ),
+              ' ',
+              this.props.descriptionPL
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'strong',
+                null,
+                'ENG:'
+              ),
+              ' ',
+              this.props.descriptionENG
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'portfolio__buttons' },
+            gitLink,
+            webLink
+          )
+        )
+      );
+    }
+  }]);
+
+  return Project;
+}(_react2.default.Component);
+
+exports.default = Project;
 
 /***/ })
 /******/ ]);

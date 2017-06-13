@@ -51,10 +51,13 @@ html {
 * {
   cursor: default; }
 
-a {
+input, textarea {
+  cursor: text; }
+
+a, button, input[type="submit"] {
   cursor: pointer; }
 
-a * {
+a *, button *, input[type="submit"] * {
   cursor: pointer; }
 
 h3 {
@@ -107,7 +110,6 @@ header a:hover {
   opacity: 0.8; }
 
 .baner__image {
-  background-image: url("http://www.ewa.arkomp.pl/portfolio/baner.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -264,6 +266,82 @@ header a:hover {
 
 .technologies .img:hover .overlay {
   opacity: 1; }
+
+.portfolio {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between; }
+  @media (max-width: 900px) {
+    .portfolio {
+      flex-direction: column; } }
+
+.portfolio .portfolio__project {
+  border: 1px solid #c0c0c0;
+  width: 48%; }
+  @media (max-width: 900px) {
+    .portfolio .portfolio__project {
+      width: 100%;
+      margin-bottom: 3rem; } }
+
+.portfolio .portfolio__image {
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20rem;
+  width: 100%; }
+
+.portfolio .portfolio__text {
+  padding: 2rem; }
+  @media (max-width: 900px) {
+    .portfolio .portfolio__text {
+      align-items: center;
+      display: flex;
+      justify-content: space-between; } }
+
+.portfolio p {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-bottom: 2rem; }
+
+.portfolio strong {
+  color: #F26037;
+  font-weight: 600; }
+
+.portfolio .portfolio__buttons {
+  align-items: center;
+  display: flex;
+  justify-content: center; }
+  @media (max-width: 900px) {
+    .portfolio .portfolio__buttons {
+      flex-direction: column; } }
+
+.portfolio a, .portfolio a:visited, .portfolio .button-disabled {
+  align-items: center;
+  border: 0;
+  border-radius: 2.5rem;
+  color: #ffffff;
+  display: flex;
+  font-size: 2.6rem;
+  height: 5rem;
+  justify-content: center;
+  margin-right: 2rem;
+  text-decoration: none;
+  width: 5rem; }
+  @media (max-width: 900px) {
+    .portfolio a, .portfolio a:visited, .portfolio .button-disabled {
+      margin-right: 0;
+      margin-bottom: 1rem; } }
+
+.portfolio a, .portfolio a:visited {
+  background-color: #1dadba; }
+
+.portfolio .button-disabled {
+  background-color: #c0c0c0; }
+
+.portfolio .portfolio__buttons > *:last-child {
+  margin-right: 0; }
+  @media (max-width: 900px) {
+    .portfolio .portfolio__buttons > *:last-child {
+      margin-bottom: 0; } }
 
 .contact {
   width: 100%; }

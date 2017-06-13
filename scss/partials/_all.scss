@@ -8,7 +8,11 @@ html {
   cursor: default;
 }
 
-a {
+input, textarea {
+  cursor: text;
+}
+
+a, button, input[type="submit"] {
   & {
     cursor: pointer;
   }

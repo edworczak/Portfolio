@@ -21,7 +21,7 @@ export default class Portfolio extends React.Component {
         descriptionPL: "Strona mojego portfolio.",
         descriptionENG: "My portfolio's website.",
         gitLink: "https://github.com/edworczak/Portfolio",
-        webLink: null
+        webLink: ""
       }]
     }
   }
@@ -39,8 +39,11 @@ export default class Portfolio extends React.Component {
         webLink={this.state.projects[i].webLink} />);
     }
 
-    return <div className="portfolio">
-      {projectsHTML}
+    return <div>
+      <h3>Portfolio</h3>
+      <div className="portfolio">
+        {projectsHTML}
+      </div>
     </div>;
   }
 }

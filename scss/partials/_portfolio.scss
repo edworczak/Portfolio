@@ -24,6 +24,7 @@
   }
 
   .portfolio__text {
+    background-color: $color-background-light;
     border: 1px solid $color-border;
     padding: 2rem;
     @media (max-width: $width-mobile) {

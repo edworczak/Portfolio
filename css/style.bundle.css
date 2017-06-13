@@ -211,9 +211,6 @@ header .fa-github {
 .about p:last-of-type {
   margin-bottom: 0; }
 
-.technologies {
-  background-color: #efefef; }
-
 .technologies .technologies__row {
   align-items: center;
   display: flex;
@@ -312,6 +309,7 @@ header .fa-github {
   width: 100%; }
 
 .portfolio .portfolio__text {
+  background-color: #ffffff;
   border: 1px solid #c0c0c0;
   padding: 2rem; }
   @media (max-width: 900px) {

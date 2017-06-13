@@ -114,8 +114,8 @@ export default class Contact extends React.Component {
       <form className="contact">
         <div className="contact__inputs">
           <div className="contact__column">
-            <input type="text" className={this.state.borderName} placeholder="twoje imię || your name" value={this.state.name} onChange={event => this.enterName(event)} />
-            <input type="email" className={this.state.borderMail} placeholder="twój mail || your mail" value={this.state.mail} onChange={event => this.enterMail(event)} />
+            <input type="text" className={this.state.borderName} placeholder="imię || name" value={this.state.name} onChange={event => this.enterName(event)} />
+            <input type="email" className={this.state.borderMail} placeholder="mail" value={this.state.mail} onChange={event => this.enterMail(event)} />
             <input type="text" className={this.state.borderTopic} placeholder="temat || topic" value={this.state.topic} onChange={event => this.enterTopic(event)} />
           </div>
           <div className="contact__column">

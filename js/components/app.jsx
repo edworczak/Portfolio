@@ -6,6 +6,7 @@ import Header from './header.jsx';
 import Baner from './baner.jsx';
 import About from './about.jsx';
 import Technologies from './technologies.jsx';
+import Portfolio from './portfolio.jsx';
 import Contact from './contact.jsx';
 
 export default class App extends React.Component {
@@ -15,6 +16,7 @@ export default class App extends React.Component {
       <div className="row baner__image"><Baner /></div>
       <div className="row"><About /></div>
       <div className="row"><Technologies /></div>
+      <div className="row"><Portfolio /></div>
       <div className="row"><Contact /></div>
     </div>;
   }

@@ -3,7 +3,7 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
-    @media (max-width: 1000px) {
+    @media (max-width: $width-mobile) {
       flex-direction: column;
     }
   }
@@ -11,7 +11,7 @@
   .line {
     border-left: 1px solid $color-font;
     height: 35rem;
-    @media (max-width: 1000px) {
+    @media (max-width: $width-mobile) {
       border-bottom: 1px solid $color-font;
       border-left: 0;
       height: 0;
@@ -23,13 +23,13 @@
   [class^="about__"] {
     font-size: 1.2rem;
     width: 45%;
-    @media (max-width: 1000px) {
+    @media (max-width: $width-mobile) {
       width: 100%;
     }
   }
 
   .about__pl {
-    @media (max-width: 1000px) {
+    @media (max-width: $width-mobile) {
       margin-bottom: 5rem;
     }
   }

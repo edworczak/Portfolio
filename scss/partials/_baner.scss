@@ -28,6 +28,9 @@
   .baner__title {
     & {
       font-size: 7rem;
+      @media (max-width: $width-mobile) {
+        font-size: 4rem;
+      }
     }
 
     strong {
@@ -38,5 +41,9 @@
   .short-line {
     border-bottom: 1px solid #ffffff;
     width: 5rem;
+  }
+
+  .baner__job-title {
+    font-weight: 300;
   }
 }

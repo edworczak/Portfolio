@@ -77,18 +77,25 @@ h3 {
   background-color: #efefef; }
 
 header {
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
   border-bottom: 1px solid #ffffff;
   color: #ffffff;
-  display: flex;
   font-size: 1.8rem;
-  height: 5rem;
-  justify-content: space-between;
-  padding: 0 10%;
   position: fixed;
   width: 100%;
   z-index: 2; }
+
+header .header__content {
+  align-items: center;
+  display: flex;
+  height: 5rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 80%; }
+  @media (min-width: 1500px) {
+    header .header__content {
+      margin: 0 auto;
+      width: 120rem; } }
 
 header .logo strong {
   font-weight: 600; }
@@ -123,6 +130,9 @@ header a:hover {
 
 .baner .baner__title {
   font-size: 7rem; }
+  @media (max-width: 900px) {
+    .baner .baner__title {
+      font-size: 4rem; } }
 
 .baner .baner__title strong {
   font-weight: 900; }
@@ -131,18 +141,21 @@ header a:hover {
   border-bottom: 1px solid #ffffff;
   width: 5rem; }
 
+.baner .baner__job-title {
+  font-weight: 300; }
+
 .about {
   align-items: center;
   display: flex;
   justify-content: space-between; }
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     .about {
       flex-direction: column; } }
 
 .about .line {
   border-left: 1px solid #000000;
   height: 35rem; }
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     .about .line {
       border-bottom: 1px solid #000000;
       border-left: 0;
@@ -153,11 +166,11 @@ header a:hover {
 .about [class^="about__"] {
   font-size: 1.2rem;
   width: 45%; }
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     .about [class^="about__"] {
       width: 100%; } }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   .about .about__pl {
     margin-bottom: 5rem; } }
 
@@ -260,6 +273,9 @@ header a:hover {
   justify-content: space-between;
   margin-bottom: 3rem;
   width: 100%; }
+  @media (max-width: 900px) {
+    .contact .contact__inputs {
+      flex-direction: column; } }
 
 .contact .contact__inputs input {
   box-sizing: border-box;
@@ -291,6 +307,9 @@ header a:hover {
   display: flex;
   flex-direction: column;
   width: 48%; }
+  @media (max-width: 900px) {
+    .contact .contact__column {
+      width: 100%; } }
 
 .contact .contact__submit {
   align-items: center;

@@ -15,4 +15,9 @@ footer {
       font-size: 3vh;
     }
   }
+
+  a, a:visited {
+    color: $color-font-on-dark;
+    text-decoration: none;
+  }
 }

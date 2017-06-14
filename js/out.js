@@ -10143,8 +10143,12 @@ var Footer = function (_React$Component) {
           _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement('i', { className: 'fa fa-envelope-square', 'aria-hidden': 'true' }),
-            ' edworczak@gmail.com'
+            _react2.default.createElement(
+              'a',
+              { href: 'mailto:edworczak@gmail.com' },
+              _react2.default.createElement('i', { className: 'fa fa-envelope-square', 'aria-hidden': 'true' }),
+              ' edworczak@gmail.com'
+            )
           )
         )
       );
@@ -10530,6 +10534,10 @@ var _portfolioProject = __webpack_require__(91);
 
 var _portfolioProject2 = _interopRequireDefault(_portfolioProject);
 
+var _projects = __webpack_require__(194);
+
+var _projects2 = _interopRequireDefault(_projects);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10544,29 +10552,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Portfolio = function (_React$Component) {
   _inherits(Portfolio, _React$Component);
 
-  function Portfolio(props) {
+  function Portfolio() {
     _classCallCheck(this, Portfolio);
 
-    var _this = _possibleConstructorReturn(this, (Portfolio.__proto__ || Object.getPrototypeOf(Portfolio)).call(this, props));
-
-    _this.state = {
-      projects: [{
-        name: "BookKeeper",
-        imageClassName: "bookkeeper",
-        descriptionPL: "Aplikacja dla domowej biblioteczki.",
-        descriptionENG: "Application for home library.",
-        gitLink: "https://github.com/edworczak/BookKeeper",
-        webLink: null
-      }, {
-        name: "Portfolio",
-        imageClassName: "my-portfolio",
-        descriptionPL: "Strona mojego portfolio.",
-        descriptionENG: "My portfolio's website.",
-        gitLink: "https://github.com/edworczak/Portfolio",
-        webLink: ""
-      }]
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (Portfolio.__proto__ || Object.getPrototypeOf(Portfolio)).apply(this, arguments));
   }
 
   _createClass(Portfolio, [{
@@ -10574,14 +10563,14 @@ var Portfolio = function (_React$Component) {
     value: function render() {
       var projectsHTML = [];
 
-      for (var i = 0; i < this.state.projects.length; i++) {
+      for (var i = 0; i < _projects2.default.length; i++) {
         projectsHTML.push(_react2.default.createElement(_portfolioProject2.default, { key: i, projectId: i,
-          name: this.state.projects[i].name,
-          imageClassName: this.state.projects[i].imageClassName,
-          descriptionPL: this.state.projects[i].descriptionPL,
-          descriptionENG: this.state.projects[i].descriptionENG,
-          gitLink: this.state.projects[i].gitLink,
-          webLink: this.state.projects[i].webLink }));
+          name: _projects2.default[i].name,
+          imageClassName: _projects2.default[i].imageClassName,
+          descriptionPL: _projects2.default[i].descriptionPL,
+          descriptionENG: _projects2.default[i].descriptionENG,
+          gitLink: _projects2.default[i].gitLink,
+          webLink: _projects2.default[i].webLink }));
       }
 
       return _react2.default.createElement(
@@ -23302,6 +23291,45 @@ module.exports = traverseAllChildren;
 __webpack_require__(82);
 module.exports = __webpack_require__(83);
 
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(11);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(10);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var projects = [{
+  name: "BookKeeper",
+  imageClassName: "bookkeeper",
+  descriptionPL: "Aplikacja dla domowej biblioteczki.",
+  descriptionENG: "Application for home library.",
+  gitLink: "https://github.com/edworczak/BookKeeper",
+  webLink: null
+}, {
+  name: "Portfolio",
+  imageClassName: "my-portfolio",
+  descriptionPL: "Strona mojego portfolio.",
+  descriptionENG: "My portfolio's website.",
+  gitLink: "https://github.com/edworczak/Portfolio",
+  webLink: ""
+}];
+
+exports.default = projects;
 
 /***/ })
 /******/ ]);

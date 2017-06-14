@@ -10,6 +10,7 @@ export default class Contact extends React.Component {
       topic: "",
       message: "",
       info: "Wypełnij pola || Fill in the fields",
+      infoClass: "info--neutral",
       borderName: "correct",
       borderMail: "correct",
       borderTopic: "correct",
@@ -64,7 +65,12 @@ export default class Contact extends React.Component {
 		    dataType: 'json',
 		    beforeSend: () => {
           this.setState({
-            info: "Wysyłanie... || Sending..."
+            info: "Wysyłanie... || Sending...",
+            infoClass: "info--neutral",
+            borderName: "correct",
+            borderMail: "correct",
+            borderTopic: "correct",
+            borderMessage: "correct"
           })
 		    },
 		    success: (data) => {
@@ -74,21 +80,20 @@ export default class Contact extends React.Component {
             topic: "",
             message: "",
             info: "Wiadomość wysłana || Message sent",
-            borderName: "correct",
-            borderMail: "correct",
-            borderTopic: "correct",
-            borderMessage: "correct"
+            infoClass: "info--sent"
           });
 		    },
 		    error: (err) => {
           this.setState({
-            info: "Błąd wysyłania || Sending error"
+            info: "Błąd wysyłania || Sending error",
+            infoClass: "info--error"
           })
 		    }
 	    });
     } else {
       this.setState({
-        info: "Popraw pola z czerwoną ramką || Correct inputs with red border"
+        info: "Popraw pola z czerwoną ramką || Correct inputs with red border",
+        infoClass: "info--error"
       })
 
       if (this.state.name == "") {
@@ -136,7 +141,6 @@ export default class Contact extends React.Component {
   render() {
     return <div className="container">
       <h3>Kontakt || Contact</h3>
-        <p className="info">{this.state.info}</p>
       <form className="contact" action="https://formspree.io/edworczak@gmail.com" method="POST">
         <div className="contact__inputs">
           <div className="contact__column">
@@ -148,6 +152,7 @@ export default class Contact extends React.Component {
             <textarea name="Message" className={this.state.borderMessage} placeholder="wiadomość || message" value={this.state.message} onChange={event => this.enterMessage(event)} />
           </div>
         </div>
+        <p className={this.state.infoClass}>{this.state.info}</p>
         <div className="contact__submit">
           <input type="submit" value="wyślij || send" onClick={event => this.sendMail(event)} />
         </div>

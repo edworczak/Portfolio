@@ -1,7 +1,7 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: ["./js/main.jsx", './scss/main.scss'],
+  entry: ["./react/main.jsx", './scss/main.scss'],
   output: {
     filename: "./js/out.js"
   },
@@ -29,7 +29,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({ // define where to save the file
-      filename: './css/style.bundle.css',
+      filename: './css/style.css',
       allChunks: true,
     }),
   ],
